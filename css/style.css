@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #1e1e1e;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+.topo {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px 40px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.menu-links {
+    display: flex;
+    gap: 30px;
+}
+
+.hero {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.botao-cta {
+    display: inline-block;
+    background-color: #e8590c;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+.sobre {
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sobre h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    font-size: 17px;
+    color: #444444;
+}
+
+.feedbacks {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.feedbacks h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.galeria-feedbacks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.galeria-feedbacks img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.avaliacoes {
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.avaliacoes h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.estrelas {
+    font-size: 28px;
+    color: #f08c00;
+    margin-bottom: 15px;
+}
+
+.avaliacoes p:not(.estrelas) {
+    font-size: 18px;
+    color: #444444;
+    font-style: italic;
+}
+
+.reforco-agendar {
+    padding: 70px 40px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.reforco-agendar h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.reforco-agendar p {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+.rodape {
+    background-color: #0f0f0f;
+    color: #cccccc;
+    padding: 40px;
+    text-align: center;
+}
+
+.logo-rodape {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.redes-sociais {
+    margin-bottom: 15px;
+}
+
+.redes-sociais a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.links-rodape {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.links-rodape a {
+    color: #cccccc;
+}
+
+.links-rodape a:hover {
+    color: #ffffff;
+}
+
+.copyright {
+    font-size: 13px;
+    color: #888888;
+}
