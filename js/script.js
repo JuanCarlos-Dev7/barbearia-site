@@ -64,3 +64,15 @@ if (tituloServico) {
         tituloServico.textContent = nome + ' · ' + preco;
     }
 }
+// Seleciona todos os botões de remover bloqueio
+const botoesRemover = document.querySelectorAll('.remover-bloqueio');
+
+botoesRemover.forEach(function (botao) {
+    botao.addEventListener('click', function () {
+        // Encontra o "card" pai desse botão (o .item-bloqueio inteiro)
+        const item = botao.closest('.item-bloqueio');
+
+        // Remove esse elemento da página
+        item.remove();
+    });
+});
