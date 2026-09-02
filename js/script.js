@@ -100,7 +100,12 @@ if (botaoConfirmar) {
             return;
         }
 
-        alert('Agendamento confirmado para ' + diaEscolhido.querySelector('.dia-nome').textContent + ' ' + diaEscolhido.querySelector('.dia-numero').textContent + ' às ' + horarioEscolhido.textContent + '!');
+        const modal = document.getElementById('modal-confirmacao');
+const modalTexto = document.getElementById('modal-texto');
+
+modalTexto.textContent = 'Agendamento para ' + diaEscolhido.querySelector('.dia-nome').textContent + ' ' + diaEscolhido.querySelector('.dia-numero').textContent + ' às ' + horarioEscolhido.textContent + '.';
+
+modal.classList.add('aberto');
     });
 }
 const formBloqueio = document.getElementById('form-bloqueio');
