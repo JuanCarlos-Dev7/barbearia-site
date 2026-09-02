@@ -627,3 +627,16 @@ ul {
         text-align: center;
     }
 }
+.dia.selecionado {
+    background-color: #e8590c;
+    border-color: #e8590c;
+}
+
+.dia.selecionado .dia-nome,
+.dia.selecionado .dia-numero {
+    color: #ffffff;
+}
+.horario.selecionado {
+    background-color: #e8590c;
+    color: #ffffff;
+}
