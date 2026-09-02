@@ -18,6 +18,9 @@ a {
 ul {
     list-style: none;
 }
+
+/* ===== TOPO / HEADER (home) ===== */
+
 .topo {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -65,6 +68,9 @@ ul {
     border-radius: 30px;
     font-weight: 600;
 }
+
+/* ===== QUEM SOMOS ===== */
+
 .sobre {
     padding: 60px 40px;
     max-width: 800px;
@@ -81,6 +87,8 @@ ul {
     font-size: 17px;
     color: #444444;
 }
+
+/* ===== FEEDBACKS ===== */
 
 .feedbacks {
     padding: 60px 40px;
@@ -106,6 +114,9 @@ ul {
     object-fit: cover;
     border-radius: 10px;
 }
+
+/* ===== AVALIAÇÕES ===== */
+
 .avaliacoes {
     padding: 60px 40px;
     text-align: center;
@@ -130,6 +141,8 @@ ul {
     font-style: italic;
 }
 
+/* ===== REFORÇO PRA AGENDAR ===== */
+
 .reforco-agendar {
     padding: 70px 40px;
     text-align: center;
@@ -147,6 +160,9 @@ ul {
     color: #cccccc;
     margin-bottom: 30px;
 }
+
+/* ===== RODAPÉ ===== */
+
 .rodape {
     background-color: #0f0f0f;
     color: #cccccc;
@@ -189,26 +205,9 @@ ul {
     font-size: 13px;
     color: #888888;
 }
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        gap: 15px;
-    }
 
-    .menu-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
+/* ===== TOPO DE PÁGINAS INTERNAS (serviços, calendário, painel, produtos) ===== */
 
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-}
 .topo-servicos {
     padding: 30px 40px;
     display: flex;
@@ -225,6 +224,8 @@ ul {
 .topo-servicos h1 {
     font-size: 26px;
 }
+
+/* ===== LISTA DE SERVIÇOS ===== */
 
 .lista-servicos {
     max-width: 700px;
@@ -265,6 +266,9 @@ ul {
     font-size: 18px;
     font-weight: 700;
 }
+
+/* ===== CALENDÁRIO (dias e horários) ===== */
+
 .agendamento {
     max-width: 700px;
     margin: 0 auto;
@@ -335,6 +339,9 @@ ul {
     margin: 20px auto 0;
     border: none;
 }
+
+/* ===== LOGIN DO BARBEIRO ===== */
+
 .tela-login {
     min-height: 100vh;
     display: flex;
@@ -394,6 +401,9 @@ ul {
     cursor: pointer;
     margin-top: 10px;
 }
+
+/* ===== PAINEL DO BARBEIRO ===== */
+
 .painel {
     max-width: 700px;
     margin: 0 auto;
@@ -507,4 +517,113 @@ ul {
     font-size: 13px;
     color: #888888;
     margin-top: 15px;
+}
+
+/* ===== PRODUTOS ===== */
+
+.lista-produtos {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.card-produto {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+}
+
+.card-produto img {
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.info-produto {
+    flex: 1;
+}
+
+.info-produto h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.categoria-produto {
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 10px;
+}
+
+.descricao-produto {
+    font-size: 14px;
+    color: #444444;
+    margin-bottom: 15px;
+}
+
+.rodape-produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botao-comprar {
+    padding: 8px 20px;
+    border: 2px solid #0c8599;
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: #0c8599;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ===== RESPONSIVIDADE (telas até 768px) ===== */
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .card-produto {
+        flex-direction: column;
+    }
+
+    .card-produto img {
+        width: 100%;
+        height: 180px;
+    }
+
+    .rodape-produto {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .botao-comprar {
+        align-self: stretch;
+        text-align: center;
+    }
 }
