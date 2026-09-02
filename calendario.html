@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher horário - A Barbearia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="topo-servicos">
+    <a href="servicos.html" class="voltar">← Voltar</a>
+    <h1>Corte de cabelo · R$ 45</h1>
+</header>
+
+<main class="agendamento">
+
+    <section class="dias">
+        <h2>Escolha o dia</h2>
+        <div class="lista-dias">
+            <button class="dia disponivel">
+                <span class="dia-nome">Seg</span>
+                <span class="dia-numero">25</span>
+            </button>
+            <button class="dia indisponivel" disabled>
+                <span class="dia-nome">Ter</span>
+                <span class="dia-numero">26</span>
+            </button>
+            <button class="dia disponivel">
+                <span class="dia-nome">Qua</span>
+                <span class="dia-numero">27</span>
+            </button>
+            <button class="dia disponivel">
+                <span class="dia-nome">Qui</span>
+                <span class="dia-numero">28</span>
+            </button>
+            <button class="dia disponivel">
+                <span class="dia-nome">Sex</span>
+                <span class="dia-numero">29</span>
+            </button>
+            <button class="dia indisponivel" disabled>
+                <span class="dia-nome">Sáb</span>
+                <span class="dia-numero">30</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="horarios">
+        <h2>Horários disponíveis</h2>
+        <div class="lista-horarios">
+            <button class="horario disponivel">09:00</button>
+            <button class="horario indisponivel" disabled>10:00</button>
+            <button class="horario disponivel">11:00</button>
+            <button class="horario disponivel">14:00</button>
+            <button class="horario indisponivel" disabled>15:00</button>
+            <button class="horario disponivel">16:00</button>
+        </div>
+    </section>
+
+    <a href="#" class="botao-cta botao-confirmar">Confirmar agendamento</a>
+
+</main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

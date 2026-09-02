@@ -265,3 +265,73 @@ ul {
     font-size: 18px;
     font-weight: 700;
 }
+.agendamento {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.dias, .horarios {
+    margin-bottom: 40px;
+}
+
+.dias h2, .horarios h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.lista-dias, .lista-horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.dia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 70px;
+    padding: 14px 0;
+    border: 2px solid #e8590c;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.dia-nome {
+    font-size: 12px;
+    color: #888888;
+}
+
+.dia-numero {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.horario {
+    padding: 12px 24px;
+    border: 2px solid #e8590c;
+    border-radius: 30px;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dia.indisponivel,
+.horario.indisponivel {
+    border-color: #dddddd;
+    color: #bbbbbb;
+    cursor: not-allowed;
+}
+
+.botao-confirmar {
+    display: block;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px auto 0;
+    border: none;
+}
