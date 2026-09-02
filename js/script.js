@@ -26,6 +26,7 @@ botoesHorario.forEach(function (botao) {
 });
 // Botões de tipo de bloqueio no painel
 const opcoesBloqueio = document.querySelectorAll('.opcao-bloqueio');
+const campoHorario = document.getElementById('campo-horario');
 
 opcoesBloqueio.forEach(function (botao) {
     botao.addEventListener('click', function () {
@@ -33,6 +34,15 @@ opcoesBloqueio.forEach(function (botao) {
             b.classList.remove('ativo');
         });
         botao.classList.add('ativo');
+
+        // Se o texto do botão for "Um horário", mostra o campo. Senão, esconde.
+        if (campoHorario) {
+            if (botao.textContent.trim() === 'Um horário') {
+                campoHorario.style.display = 'flex';
+            } else {
+                campoHorario.style.display = 'none';
+            }
+        }
     });
 });
 // Seleciona todos os cards de serviço
@@ -76,3 +86,60 @@ botoesRemover.forEach(function (botao) {
         item.remove();
     });
 });
+const botaoConfirmar = document.getElementById('botao-confirmar');
+
+if (botaoConfirmar) {
+    botaoConfirmar.addEventListener('click', function (evento) {
+        evento.preventDefault();
+
+        const diaEscolhido = document.querySelector('.dia.selecionado');
+        const horarioEscolhido = document.querySelector('.horario.selecionado');
+
+        if (!diaEscolhido || !horarioEscolhido) {
+            alert('Escolha um dia e um horário antes de confirmar.');
+            return;
+        }
+
+        alert('Agendamento confirmado para ' + diaEscolhido.querySelector('.dia-nome').textContent + ' ' + diaEscolhido.querySelector('.dia-numero').textContent + ' às ' + horarioEscolhido.textContent + '!');
+    });
+}
+const formBloqueio = document.getElementById('form-bloqueio');
+
+if (formBloqueio) {
+    formBloqueio.addEventListener('submit', function (evento) {
+        evento.preventDefault();
+
+        const data = document.getElementById('data-bloqueio').value;
+        const horario = document.getElementById('horario-bloqueio').value;
+        const motivo = document.getElementById('motivo').value;
+
+        const horarioVisivel = campoHorario && campoHorario.style.display !== 'none';
+
+if (!data || (horarioVisivel && !horario)) {
+    alert('Preencha os campos necessários.');
+    return;
+}
+
+        // Cria um novo elemento <div> do zero
+        const novoItem = document.createElement('div');
+        novoItem.classList.add('item-bloqueio');
+
+        // Monta o HTML de dentro desse novo elemento
+        novoItem.innerHTML = `
+            <p>${data} · ${horario} · <span class="motivo-bloqueio">"${motivo || 'sem motivo informado'}"</span></p>
+            <button class="remover-bloqueio">✕ Remover</button>
+        `;
+
+        // Adiciona esse novo item no topo da lista
+        const listaBloqueios = document.getElementById('bloqueios-ativos');
+        listaBloqueios.insertBefore(novoItem, listaBloqueios.querySelector('h2').nextSibling);
+
+        // Faz o botão de remover desse novo item funcionar também
+        novoItem.querySelector('.remover-bloqueio').addEventListener('click', function () {
+            novoItem.remove();
+        });
+
+        // Limpa o formulário depois de adicionar
+        formBloqueio.reset();
+    });
+}

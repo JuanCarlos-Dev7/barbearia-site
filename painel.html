@@ -28,15 +28,16 @@
             <button class="opcao-bloqueio">Uma semana</button>
             <button class="opcao-bloqueio">Um mês</button>
         </div>
-                <form class="form-bloqueio">
+
+        <form class="form-bloqueio" id="form-bloqueio">
             <div class="campo-form">
                 <label for="data-bloqueio">Data</label>
                 <input type="date" id="data-bloqueio" name="data-bloqueio">
             </div>
 
-            <div class="campo-form">
-                <label for="horario-bloqueio">Horário</label>
-                <input type="time" id="horario-bloqueio" name="horario-bloqueio">
+            <div class="campo-form" id="campo-horario">
+                 <label for="horario-bloqueio">Horário</label>
+                 <input type="time" id="horario-bloqueio" name="horario-bloqueio">
             </div>
 
             <div class="campo-form">
@@ -47,7 +48,8 @@
             <button type="submit" class="botao-cta botao-bloquear">Confirmar bloqueio</button>
         </form>
     </section>
-        <section class="bloqueios-ativos">
+
+    <section class="bloqueios-ativos" id="bloqueios-ativos">
         <h2>Bloqueios ativos</h2>
 
         <div class="item-bloqueio">
