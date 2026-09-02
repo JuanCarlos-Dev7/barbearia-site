@@ -148,3 +148,24 @@ if (!data || (horarioVisivel && !horario)) {
         formBloqueio.reset();
     });
 }
+const formLogin = document.getElementById('form-login');
+
+if (formLogin) {
+    formLogin.addEventListener('submit', function (evento) {
+        evento.preventDefault();
+
+        const usuario = document.getElementById('usuario').value;
+        const senha = document.getElementById('senha').value;
+        const erroLogin = document.getElementById('erro-login');
+
+        // Usuário e senha fixos, só para simulação
+        const usuarioCorreto = 'barbeiro@abarbearia.com';
+        const senhaCorreta = '123456';
+
+        if (usuario === usuarioCorreto && senha === senhaCorreta) {
+            window.location.href = 'painel.html';
+        } else {
+            erroLogin.textContent = 'Usuário ou senha incorretos.';
+        }
+    });
+}

@@ -703,3 +703,10 @@ ul {
 .nav-interna a:hover {
     color: #e8590c;
 }
+.erro-login {
+    color: #e03131;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 10px;
+    min-height: 16px;
+}
