@@ -209,3 +209,59 @@ ul {
         font-size: 16px;
     }
 }
+.topo-servicos {
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.voltar {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.topo-servicos h1 {
+    font-size: 26px;
+}
+
+.lista-servicos {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.card-servico {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.card-servico img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.info-servico {
+    flex: 1;
+}
+
+.info-servico h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.duracao {
+    font-size: 14px;
+    color: #888888;
+}
+
+.preco {
+    font-size: 18px;
+    font-weight: 700;
+}
