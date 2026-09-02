@@ -1,3 +1,4 @@
+console.log('script.js carregado!');
 // Seleciona todos os botões de dia que estão disponíveis
 const botoesDia = document.querySelectorAll('.dia.disponivel');
 
@@ -34,3 +35,32 @@ opcoesBloqueio.forEach(function (botao) {
         botao.classList.add('ativo');
     });
 });
+// Seleciona todos os cards de serviço
+const cardsServico = document.querySelectorAll('.card-servico');
+
+cardsServico.forEach(function (card) {
+    card.addEventListener('click', function () {
+        // Pega os dados guardados no card clicado
+        const nome = card.dataset.nome;
+        const preco = card.dataset.preco;
+
+        // Salva esses dados na "gaveta" do navegador
+        localStorage.setItem('servicoEscolhido', nome);
+        localStorage.setItem('precoEscolhido', preco);
+
+        // Navega para a página de calendário
+        window.location.href = 'calendario.html';
+    });
+});
+// Verifica se existe um título de serviço na página atual
+const tituloServico = document.getElementById('titulo-servico');
+
+// Só executa se esse elemento existir na página (evita erro em outras páginas)
+if (tituloServico) {
+    const nome = localStorage.getItem('servicoEscolhido');
+    const preco = localStorage.getItem('precoEscolhido');
+
+    if (nome && preco) {
+        tituloServico.textContent = nome + ' · ' + preco;
+    }
+}
