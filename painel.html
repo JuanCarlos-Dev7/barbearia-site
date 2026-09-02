@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Barbeiro - A Barbearia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="topo-servicos">
+    <a href="index.html" class="voltar">← Sair</a>
+    <h1>Painel do Barbeiro</h1>
+</header>
+
+<main class="painel">
+
+    <section class="bloquear-agenda">
+        <h2>Bloquear agenda</h2>
+        <p class="instrucao">Escolha o que fechar:</p>
+
+        <div class="opcoes-bloqueio">
+            <button class="opcao-bloqueio ativo">Um horário</button>
+            <button class="opcao-bloqueio">Um dia</button>
+            <button class="opcao-bloqueio">Uma semana</button>
+            <button class="opcao-bloqueio">Um mês</button>
+        </div>
+                <form class="form-bloqueio">
+            <div class="campo-form">
+                <label for="data-bloqueio">Data</label>
+                <input type="date" id="data-bloqueio" name="data-bloqueio">
+            </div>
+
+            <div class="campo-form">
+                <label for="horario-bloqueio">Horário</label>
+                <input type="time" id="horario-bloqueio" name="horario-bloqueio">
+            </div>
+
+            <div class="campo-form">
+                <label for="motivo">Motivo (opcional)</label>
+                <input type="text" id="motivo" name="motivo" placeholder="Ex: almoço, consulta, viagem...">
+            </div>
+
+            <button type="submit" class="botao-cta botao-bloquear">Confirmar bloqueio</button>
+        </form>
+    </section>
+        <section class="bloqueios-ativos">
+        <h2>Bloqueios ativos</h2>
+
+        <div class="item-bloqueio">
+            <p>27/08 · 15:00-16:00 · <span class="motivo-bloqueio">"consulta médica"</span></p>
+            <button class="remover-bloqueio">✕ Remover</button>
+        </div>
+
+        <div class="item-bloqueio">
+            <p>02/09 a 08/09 · semana inteira · <span class="motivo-bloqueio">"férias"</span></p>
+            <button class="remover-bloqueio">✕ Remover</button>
+        </div>
+
+        <p class="nota-painel">Esses horários somem automaticamente da tela do cliente.</p>
+    </section>
+
+</main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

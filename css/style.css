@@ -394,3 +394,117 @@ ul {
     cursor: pointer;
     margin-top: 10px;
 }
+.painel {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.bloquear-agenda {
+    margin-bottom: 50px;
+}
+
+.bloquear-agenda h2,
+.bloqueios-ativos h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.instrucao {
+    color: #888888;
+    margin-bottom: 15px;
+}
+
+.opcoes-bloqueio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.opcao-bloqueio {
+    padding: 12px 20px;
+    border: 2px solid #dddddd;
+    border-radius: 30px;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.opcao-bloqueio.ativo {
+    border-color: #e8590c;
+    background-color: #e8590c;
+    color: #ffffff;
+}
+
+.form-bloqueio {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo-form label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.campo-form input {
+    padding: 12px 14px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.campo-form input:focus {
+    outline: none;
+    border-color: #e8590c;
+}
+
+.botao-bloquear {
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.item-bloqueio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.motivo-bloqueio {
+    color: #888888;
+    font-style: italic;
+}
+
+.remover-bloqueio {
+    background: none;
+    border: none;
+    color: #e8590c;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nota-painel {
+    font-size: 13px;
+    color: #888888;
+    margin-top: 15px;
+}
