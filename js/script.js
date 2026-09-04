@@ -195,29 +195,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const reviews = [
     {
-        nome: "Cliente Elmont",
+        nome: "Juan Carlos Soares",
         iniciais: "JC",
-        texto: "Atendimento excelente, ambiente muito bom e corte impecável. Dá pra perceber o cuidado em cada detalhe."
+        texto: "O brabo de Goiânia! 💈🔥 Atendimento top, corte nos mínimos detalhes. O cara é especialista!"
     },
     {
-        nome: "Cliente Elmont",
-        iniciais: "RM",
-        texto: "Profissional muito atencioso e serviço de qualidade. Com certeza voltarei mais vezes."
+        nome: "Jailson Oliveira",
+        iniciais: "JO",
+        texto: "Corte excelente, atendimento magnífico. Sou cliente há muitos anos, super recomendo. Cara é top."
     },
     {
-        nome: "Cliente Elmont",
-        iniciais: "LS",
-        texto: "Ambiente diferenciado, ótimo atendimento e resultado acima do esperado."
+        nome: "Arthur",
+        iniciais: "AR",
+        texto: "Excelente atendimento, cabelo ficou do jeito que eu queria."
     },
     {
-        nome: "Cliente Elmont",
-        iniciais: "MP",
-        texto: "Uma experiência completa. Atendimento cuidadoso e acabamento impecável."
-    },
-    {
-        nome: "Cliente Elmont",
-        iniciais: "AF",
-        texto: "Excelente atendimento, ambiente muito agradável e um corte feito com muita atenção aos detalhes."
+        nome: "Allan Júnior",
+        iniciais: "AJ",
+        texto: "Barbearia top. Ambiente climatizado. Pontualidade. Ambiente agradável e estiloso. Vale a pena conhecer, sou cliente fiel."
     }
 ];
 

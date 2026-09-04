@@ -1618,3 +1618,14 @@ h1, h2, .logo, .logo-rodape {
         padding: 0 42px;
     }
 }
+.reviews-google-link {
+    display: block;
+    width: fit-content;
+    margin: 35px auto 0;
+    color: #b88752;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(184, 135, 82, 0.35);
+    padding-bottom: 4px;
+}
