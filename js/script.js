@@ -281,3 +281,23 @@ if (
     });
 
 }
+// ===== MENU MOBILE =====
+
+const menuToggle = document.querySelector(".menu-toggle");
+const menuDireita = document.querySelector(".menu-direita");
+
+if (menuToggle && menuDireita) {
+
+    menuToggle.addEventListener("click", () => {
+        menuDireita.classList.toggle("menu-aberto");
+    });
+
+    document.querySelectorAll(".menu-links a, .botao-menu").forEach(link => {
+
+        link.addEventListener("click", () => {
+            menuDireita.classList.remove("menu-aberto");
+        });
+
+    });
+
+}
