@@ -169,3 +169,25 @@ if (formLogin) {
         }
     });
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const ritualBlocks = document.querySelectorAll('.ritual-block');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.25
+  };
+
+  const ritualObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  ritualBlocks.forEach(block => {
+    ritualObserver.observe(block);
+  });
+});
