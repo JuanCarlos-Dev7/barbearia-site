@@ -1,189 +1,542 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Elmont Barbearia</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<header class="topo">
-    <nav class="menu">
-        <img src="img/logo.png" alt="Elmont Barbearia" class="logo-menu">
-        <div class="menu-direita">
-            <ul class="menu-links">
-                <li><a href="#local">Local</a></li>
-                <li><a href="#experiencias">Experiências</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-            </ul>
-            <a href="#agendar" class="botao-menu">Agendar</a>
-        </div>
-    </nav>
-</header>
 
-<div class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="videos/hero.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-conteudo">
-        <img src="img/logo.png" alt="Elmont Barbearia" class="hero-logo">
-        <h1>Estilo <span class="destaque-dourado">que transforma</span></h1>
-        <p>Mais que um corte, uma experiência. Estilo, cuidado e presença em cada detalhe.</p>
-        <a href="#agendar" class="botao-cta">Agendar agora</a>
-    </div>
-</div>
-<section id="local" class="manifesto-elmont">
+    <!-- ================= HEADER ================= -->
 
-    <div class="manifesto-conteudo">
+    <header class="topo">
+        <nav class="menu">
 
-        <span class="manifesto-capitulo">01 · A ELMONT</span>
+            <img
+                src="img/logo.png"
+                alt="Elmont Barbearia"
+                class="logo-menu"
+            >
 
-        <h2>
-            Não é só sobre<br>
-            cortar cabelo.
-        </h2>
+            <div class="menu-direita">
 
-        <h3>
-            É sobre presença, identidade<br>
-            e cuidado em cada detalhe.
-        </h3>
+                <ul class="menu-links">
+                    <li><a href="#local">Local</a></li>
+                    <li><a href="#experiencias">Experiências</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                </ul>
 
-        <p>
-            A Elmont nasceu para transformar o momento do corte em uma
-            experiência completa. Um espaço onde estilo, técnica e
-            personalidade se encontram.
-        </p>
+                <a href="#agendar" class="botao-menu">
+                    Agendar
+                </a>
 
-    </div>
-
-    <div class="manifesto-imagem">
-        <img src="img/ritual-experiencia.jpg" alt="Experiência Elmont Barbearia">
-    </div>
-
-</section>
-
-<section class="ritual-section" id="experiencias">
-
-    <div class="ritual-header">
-        <span>02 · O RITUAL</span>
-
-        <h2>
-            Mais que um corte.<br>
-            Um momento seu dentro da Elmont.
-        </h2>
-
-        <p>
-            Cada atendimento é pensado nos detalhes, do primeiro toque
-            ao acabamento final.
-        </p>
-    </div>
-
-    <!-- 01 -->
-    <article class="ritual-item ritual-corte">
-        <div class="ritual-overlay"></div>
-
-        <div class="ritual-content">
-            <span class="ritual-number">01</span>
-            <h3>O CORTE</h3>
-            <p>
-                Precisão em cada movimento. Um corte pensado para
-                valorizar seu estilo e sua presença.
-            </p>
-        </div>
-    </article>
-
-    <!-- 02 -->
-    <article class="ritual-item ritual-detalhes">
-        <div class="ritual-overlay"></div>
-
-        <div class="ritual-content">
-            <span class="ritual-number">02</span>
-            <h3>OS DETALHES</h3>
-            <p>
-                Cada linha, cada contorno e cada transição recebem
-                atenção total para um resultado impecável.
-            </p>
-        </div>
-    </article>
-
-    <!-- 03 -->
-    <article class="ritual-item ritual-experiencia">
-        <div class="ritual-overlay"></div>
-
-        <div class="ritual-content">
-            <span class="ritual-number">03</span>
-            <h3>A EXPERIÊNCIA</h3>
-            <p>
-                Mais que um corte: um momento de cuidado,
-                presença e confiança dentro da Elmont.
-            </p>
-        </div>
-    </article>
-
-</section>
-
-<div class="reviews-carousel">
-
-    <button class="review-arrow review-prev" aria-label="Avaliação anterior">
-        ←
-    </button>
-
-    <div class="review-featured">
-
-        <div class="review-quote-mark">”</div>
-
-        <div class="review-stars">★★★★★</div>
-
-        <blockquote id="review-text">
-            Atendimento excelente, ambiente muito bom e corte impecável.
-            Dá pra perceber o cuidado em cada detalhe.
-        </blockquote>
-
-        <div class="review-author">
-            <div class="review-avatar" id="review-avatar">JC</div>
-
-            <div>
-                <strong id="review-name">CLIENTE ELMONT</strong>
-                <span>Google · ★★★★★</span>
             </div>
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <div class="hero">
+
+        <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+        >
+            <source src="videos/hero.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-conteudo">
+
+            <img
+                src="img/logo.png"
+                alt="Elmont Barbearia"
+                class="hero-logo"
+            >
+
+            <h1>
+                Estilo
+                <span class="destaque-dourado">
+                    que transforma
+                </span>
+            </h1>
+
+            <p>
+                Mais que um corte, uma experiência.
+                Estilo, cuidado e presença em cada detalhe.
+            </p>
+
+            <a href="#agendar" class="botao-cta">
+                Agendar agora
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- ================= 01 · A ELMONT ================= -->
+
+    <section id="local" class="manifesto-elmont">
+
+        <div class="manifesto-conteudo">
+
+            <span class="manifesto-capitulo">
+                01 · A ELMONT
+            </span>
+
+            <h2>
+                Não é só sobre<br>
+                cortar cabelo.
+            </h2>
+
+            <h3>
+                É sobre presença, identidade<br>
+                e cuidado em cada detalhe.
+            </h3>
+
+            <p>
+                A Elmont nasceu para transformar o momento do corte
+                em uma experiência completa. Um espaço onde estilo,
+                técnica e personalidade se encontram.
+            </p>
+
         </div>
 
-    </div>
+        <div class="manifesto-imagem">
 
-    <button class="review-arrow review-next" aria-label="Próxima avaliação">
-        →
-    </button>
+            <img
+                src="img/ritual-experiencia.jpg"
+                alt="Experiência Elmont Barbearia"
+            >
 
-</div>
+        </div>
 
-<div class="review-counter">
-    <span id="review-current">01</span>
-    <span>/</span>
-    <span id="review-total">05</span>
-</div>
+    </section>
 
-<section id="agendar" class="reforco-agendar">
-    <h2>Bora agendar seu horário?</h2>
-    <p>Escolha o serviço, o dia e o horário que preferir.</p>
-    <a href="#" class="botao-cta">Agendar agora</a>
-</section>
-<footer class="rodape">
-    <p class="logo-rodape">Elmont Barbearia</p>
-    <div class="redes-sociais">
-        <a href="#">Instagram</a>
-    </div>
-    <div class="links-rodape">
-        <a href="#local">Unidades</a>
-        <a href="#experiencias">Serviços</a>
-        <a href="#">Política de Privacidade</a>
-    </div>
-    <p class="copyright">&copy; 2026 Elmont Barbearia. Todos os direitos reservados.</p>
-</footer>
+
+    <!-- ================= 02 · O RITUAL ================= -->
+
+    <section
+        class="ritual-section"
+        id="experiencias"
+    >
+
+        <div class="ritual-header">
+
+            <span>
+                02 · O RITUAL
+            </span>
+
+            <h2>
+                Mais que um corte.<br>
+                Um momento seu dentro da Elmont.
+            </h2>
+
+            <p>
+                Cada atendimento é pensado nos detalhes,
+                do primeiro toque ao acabamento final.
+            </p>
+
+        </div>
+
+
+        <!-- 01 -->
+
+        <article class="ritual-item ritual-corte">
+
+            <div class="ritual-overlay"></div>
+
+            <div class="ritual-content">
+
+                <span class="ritual-number">
+                    01
+                </span>
+
+                <h3>
+                    O CORTE
+                </h3>
+
+                <p>
+                    Precisão em cada movimento.
+                    Um corte pensado para valorizar
+                    seu estilo e sua presença.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="ritual-item ritual-detalhes">
+
+            <div class="ritual-overlay"></div>
+
+            <div class="ritual-content">
+
+                <span class="ritual-number">
+                    02
+                </span>
+
+                <h3>
+                    OS DETALHES
+                </h3>
+
+                <p>
+                    Cada linha, cada contorno e cada transição
+                    recebem atenção total para um resultado impecável.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="ritual-item ritual-experiencia">
+
+            <div class="ritual-overlay"></div>
+
+            <div class="ritual-content">
+
+                <span class="ritual-number">
+                    03
+                </span>
+
+                <h3>
+                    A EXPERIÊNCIA
+                </h3>
+
+                <p>
+                    Mais que um corte: um momento de cuidado,
+                    presença e confiança dentro da Elmont.
+                </p>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- ================= 03 · AVALIAÇÕES ================= -->
+
+    <section
+        id="feedback"
+        class="reviews-section"
+    >
+
+        <div class="reviews-header">
+
+            <span class="reviews-chapter">
+                03 · QUEM JÁ PASSOU POR AQUI
+            </span>
+
+            <h2>
+                Quem conhece a Elmont,<br>
+                entende a diferença.
+            </h2>
+
+        </div>
+
+
+        <div class="reviews-carousel">
+
+            <button
+                class="review-arrow review-prev"
+                aria-label="Avaliação anterior"
+            >
+                ←
+            </button>
+
+
+            <div class="review-featured">
+
+                <div class="review-quote-mark">
+                    ”
+                </div>
+
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+
+                <blockquote id="review-text">
+                    Atendimento excelente, ambiente muito bom
+                    e corte impecável. Dá pra perceber o cuidado
+                    em cada detalhe.
+                </blockquote>
+
+
+                <div class="review-author">
+
+                    <div
+                        class="review-avatar"
+                        id="review-avatar"
+                    >
+                        JC
+                    </div>
+
+                    <div>
+
+                        <strong id="review-name">
+                            CLIENTE ELMONT
+                        </strong>
+
+                        <span>
+                            Google · ★★★★★
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="review-arrow review-next"
+                aria-label="Próxima avaliação"
+            >
+                →
+            </button>
+
+        </div>
+
+
+        <div class="review-counter">
+
+            <span id="review-current">
+                01
+            </span>
+
+            <span>/</span>
+
+            <span id="review-total">
+                04
+            </span>
+
+        </div>
+
+
+        <a
+            href="https://maps.app.goo.gl/4gEERpMVFuWN5SmM9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="reviews-google-link"
+        >
+            Ver todas as avaliações no Google →
+        </a>
+
+    </section>
+
+
+    <!-- ================= 04 · NOS ENCONTRE ================= -->
+
+    <section
+        id="localizacao"
+        class="localizacao-elmont"
+    >
+
+        <div class="localizacao-header">
+
+            <span>
+                04 · NOS ENCONTRE
+            </span>
+
+            <h2>
+                ELMONT<br>
+                GOIÂNIA
+            </h2>
+
+        </div>
+
+
+        <div class="localizacao-info">
+
+            <div class="localizacao-bloco">
+
+                <span>
+                    ENDEREÇO
+                </span>
+
+                <p>
+                    Coloque aqui o endereço completo da Elmont.
+                </p>
+
+            </div>
+
+
+            <div class="localizacao-bloco">
+
+                <span>
+                    HORÁRIOS
+                </span>
+
+                <p>
+                    Segunda a Sexta: 09h às 20h<br>
+                    Sábado: 09h às 18h<br>
+                    Domingo: Fechado
+                </p>
+
+            </div>
+
+
+            <div class="localizacao-bloco">
+
+                <span>
+                    CONTATO
+                </span>
+
+                <p>
+                    (62) XXXXX-XXXX
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="localizacao-botoes">
+
+            <a
+                href="#"
+                class="btn-local btn-whatsapp"
+            >
+                FALAR NO WHATSAPP
+            </a>
+
+            <a
+                href="#"
+                class="btn-local btn-instagram"
+            >
+                VER NO INSTAGRAM
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= AGENDAMENTO ================= -->
+
+    <section
+        id="agendar"
+        class="reforco-agendar"
+    >
+
+        <h2>
+            Bora agendar seu horário?
+        </h2>
+
+        <p>
+            Escolha o serviço, o dia e o horário que preferir.
+        </p>
+
+        <a
+            href="#"
+            class="botao-cta"
+        >
+            Agendar agora
+        </a>
+
+    </section>
+
+
+    <!-- ================= MAPA ================= -->
+
+    <section class="mapa-section">
+
+        <div class="mapa-elmont">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238.82794654609503!2d-49.27070639672007!3d-16.71451590047034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef100637f3ee1%3A0x368d7ec0c00f6183!2sElmont%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1788493483328!5m2!1spt-BR!2sbr"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Localização da Elmont Barbearia"
+            >
+            </iframe>
+
+        </div>
+
+
+        <a
+            class="rota-google"
+            href="https://maps.app.goo.gl/4gEERpMVFuWN5SmM9"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ABRIR ROTA NO GOOGLE MAPS →
+        </a>
+
+    </section>
+
+
+    <!-- ================= RODAPÉ ================= -->
+
+    <footer class="rodape">
+
+        <p class="logo-rodape">
+            Elmont Barbearia
+        </p>
+
+        <div class="redes-sociais">
+
+            <a href="#">
+                Instagram
+            </a>
+
+        </div>
+
+
+        <div class="links-rodape">
+
+            <a href="#localizacao">
+                Local
+            </a>
+
+            <a href="#experiencias">
+                Serviços
+            </a>
+
+            <a href="#">
+                Política de Privacidade
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+            &copy; 2026 Elmont Barbearia.
+            Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+
     <script src="js/script.js"></script>
+
 </body>
+
 </html>

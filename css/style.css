@@ -1629,3 +1629,195 @@ h1, h2, .logo, .logo-rodape {
     border-bottom: 1px solid rgba(184, 135, 82, 0.35);
     padding-bottom: 4px;
 }
+/* ===== 04 · LOCALIZAÇÃO ===== */
+
+.localizacao-elmont {
+    background: #070707;
+    color: #eee8df;
+    padding: 110px 7% 70px;
+}
+
+.localizacao-header {
+    margin-bottom: 70px;
+}
+
+.localizacao-header span {
+    display: block;
+    margin-bottom: 20px;
+
+    color: #b88752;
+    font-size: 0.75rem;
+    letter-spacing: 0.24em;
+}
+
+.localizacao-header h2 {
+    margin: 0;
+
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(4.5rem, 8vw, 8rem);
+    font-weight: 400;
+    line-height: 0.82;
+}
+
+.localizacao-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+
+    margin-bottom: 55px;
+}
+
+.localizacao-bloco span {
+    display: block;
+    margin-bottom: 14px;
+
+    color: #8c704b;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+}
+
+.localizacao-bloco p {
+    margin: 0;
+
+    color: #d6d0c8;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.localizacao-botoes {
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 55px;
+}
+
+.btn-local {
+    padding: 15px 24px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+
+    transition: 0.25s ease;
+}
+
+.btn-whatsapp {
+    background: #eee8df;
+    color: #080706;
+}
+
+.btn-instagram {
+    border: 1px solid rgba(184, 135, 82, 0.5);
+    color: #eee8df;
+}
+
+.btn-local:hover {
+    transform: translateY(-2px);
+}
+
+.mapa-elmont {
+    width: 100%;
+    height: 420px;
+
+    overflow: hidden;
+
+    border-top: 1px solid rgba(184, 135, 82, 0.25);
+    border-bottom: 1px solid rgba(184, 135, 82, 0.25);
+}
+
+.mapa-elmont iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+
+    filter: grayscale(1) invert(0.9) contrast(1.05);
+}
+
+.rota-google {
+    display: block;
+    width: fit-content;
+
+    margin: 25px auto 0;
+
+    color: #b88752;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+
+    border-bottom: 1px solid rgba(184, 135, 82, 0.35);
+    padding-bottom: 4px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .localizacao-elmont {
+        padding: 90px 24px 50px;
+    }
+
+    .localizacao-header {
+        margin-bottom: 55px;
+    }
+
+    .localizacao-header h2 {
+        font-size: 4.5rem;
+    }
+
+    .localizacao-info {
+        grid-template-columns: 1fr;
+        gap: 38px;
+
+        margin-bottom: 45px;
+    }
+
+    .localizacao-botoes {
+        flex-direction: column;
+        margin-bottom: 45px;
+    }
+
+    .btn-local {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mapa-elmont {
+        width: calc(100% + 48px);
+        height: 340px;
+
+        margin-left: -24px;
+    }
+}
+/* ===== SEÇÃO DO MAPA ===== */
+
+.mapa-section {
+    background: #070707;
+    padding: 0 7% 70px;
+}
+
+.mapa-elmont {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+}
+
+.mapa-elmont iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+
+    .mapa-section {
+        padding: 0 24px 50px;
+    }
+
+    .mapa-elmont {
+        width: calc(100% + 48px);
+        height: 340px;
+        margin-left: -24px;
+    }
+
+}
