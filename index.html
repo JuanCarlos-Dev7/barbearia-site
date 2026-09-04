@@ -127,45 +127,45 @@
 
 </section>
 
-<section id="feedback" class="reviews-section">
+<div class="reviews-carousel">
 
-    <div class="reviews-header">
-        <span class="reviews-chapter">03 · QUEM JÁ PASSOU POR AQUI</span>
-
-        <h2>
-            Quem conhece a Elmont,
-            <br>
-            entende a diferença.
-        </h2>
-    </div>
+    <button class="review-arrow review-prev" aria-label="Avaliação anterior">
+        ←
+    </button>
 
     <div class="review-featured">
 
         <div class="review-quote-mark">”</div>
 
-        <div class="review-stars">
-            ★★★★★
-        </div>
+        <div class="review-stars">★★★★★</div>
 
-        <blockquote>
+        <blockquote id="review-text">
             Atendimento excelente, ambiente muito bom e corte impecável.
             Dá pra perceber o cuidado em cada detalhe.
         </blockquote>
 
         <div class="review-author">
-            <div class="review-avatar">
-                JC
-            </div>
+            <div class="review-avatar" id="review-avatar">JC</div>
 
             <div>
-                <strong>Cliente Elmont</strong>
+                <strong id="review-name">CLIENTE ELMONT</strong>
                 <span>Google Avaliações</span>
             </div>
         </div>
 
     </div>
 
-</section>
+    <button class="review-arrow review-next" aria-label="Próxima avaliação">
+        →
+    </button>
+
+</div>
+
+<div class="review-counter">
+    <span id="review-current">01</span>
+    <span>/</span>
+    <span id="review-total">05</span>
+</div>
 
 <section id="agendar" class="reforco-agendar">
     <h2>Bora agendar seu horário?</h2>

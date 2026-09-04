@@ -191,3 +191,98 @@ document.addEventListener('DOMContentLoaded', () => {
     ritualObserver.observe(block);
   });
 });
+// ===== CARROSSEL DE AVALIAÇÕES =====
+
+const reviews = [
+    {
+        nome: "Cliente Elmont",
+        iniciais: "JC",
+        texto: "Atendimento excelente, ambiente muito bom e corte impecável. Dá pra perceber o cuidado em cada detalhe."
+    },
+    {
+        nome: "Cliente Elmont",
+        iniciais: "RM",
+        texto: "Profissional muito atencioso e serviço de qualidade. Com certeza voltarei mais vezes."
+    },
+    {
+        nome: "Cliente Elmont",
+        iniciais: "LS",
+        texto: "Ambiente diferenciado, ótimo atendimento e resultado acima do esperado."
+    },
+    {
+        nome: "Cliente Elmont",
+        iniciais: "MP",
+        texto: "Uma experiência completa. Atendimento cuidadoso e acabamento impecável."
+    },
+    {
+        nome: "Cliente Elmont",
+        iniciais: "AF",
+        texto: "Excelente atendimento, ambiente muito agradável e um corte feito com muita atenção aos detalhes."
+    }
+];
+
+let reviewIndex = 0;
+
+const reviewText = document.getElementById("review-text");
+const reviewName = document.getElementById("review-name");
+const reviewAvatar = document.getElementById("review-avatar");
+const reviewCurrent = document.getElementById("review-current");
+const reviewTotal = document.getElementById("review-total");
+
+const reviewPrev = document.querySelector(".review-prev");
+const reviewNext = document.querySelector(".review-next");
+const reviewFeatured = document.querySelector(".review-featured");
+
+if (
+    reviewText &&
+    reviewName &&
+    reviewAvatar &&
+    reviewCurrent &&
+    reviewTotal &&
+    reviewPrev &&
+    reviewNext &&
+    reviewFeatured
+) {
+
+    reviewTotal.textContent = String(reviews.length).padStart(2, "0");
+
+    function atualizarReview() {
+        reviewFeatured.classList.add("review-changing");
+
+        setTimeout(() => {
+
+            const review = reviews[reviewIndex];
+
+            reviewText.textContent = review.texto;
+            reviewName.textContent = review.nome;
+            reviewAvatar.textContent = review.iniciais;
+
+            reviewCurrent.textContent =
+                String(reviewIndex + 1).padStart(2, "0");
+
+            reviewFeatured.classList.remove("review-changing");
+
+        }, 250);
+    }
+
+    reviewNext.addEventListener("click", () => {
+        reviewIndex++;
+
+        if (reviewIndex >= reviews.length) {
+            reviewIndex = 0;
+        }
+
+        atualizarReview();
+    });
+
+    reviewPrev.addEventListener("click", () => {
+        reviewIndex--;
+
+        if (reviewIndex < 0) {
+            reviewIndex = reviews.length - 1;
+        }
+
+        atualizarReview();
+    });
+
+}
