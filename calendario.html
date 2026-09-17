@@ -11,61 +11,125 @@
 </head>
 <body>
 
-    <header class="topo-servicos">
-    <a href="index.html" class="voltar">← Voltar</a>
-    <h1 id="titulo-servico">Corte de cabelo · R$ 45</h1>
+<header class="topo-servicos">
+
+    <a href="servicos.html" class="voltar">← Voltar</a>
+
     <nav class="nav-interna">
         <a href="servicos.html">Serviços</a>
         <a href="produtos.html">Produtos</a>
         <a href="login.html">Painel</a>
     </nav>
+
 </header>
 
 <main class="agendamento">
 
-    <section class="dias">
-        <h2>Escolha o dia</h2>
-        <div class="lista-dias">
-            <button class="dia disponivel">
-                <span class="dia-nome">Seg</span>
-                <span class="dia-numero">25</span>
-            </button>
-            <button class="dia indisponivel" disabled>
-                <span class="dia-nome">Ter</span>
-                <span class="dia-numero">26</span>
-            </button>
-            <button class="dia disponivel">
-                <span class="dia-nome">Qua</span>
-                <span class="dia-numero">27</span>
-            </button>
-            <button class="dia disponivel">
-                <span class="dia-nome">Qui</span>
-                <span class="dia-numero">28</span>
-            </button>
-            <button class="dia disponivel">
-                <span class="dia-nome">Sex</span>
-                <span class="dia-numero">29</span>
-            </button>
-            <button class="dia indisponivel" disabled>
-                <span class="dia-nome">Sáb</span>
-                <span class="dia-numero">30</span>
-            </button>
-        </div>
-    </section>
+    <div class="agendamento-card">
 
-    <section class="horarios">
-        <h2>Horários disponíveis</h2>
-        <div class="lista-horarios">
-            <button class="horario disponivel">09:00</button>
-            <button class="horario indisponivel" disabled>10:00</button>
-            <button class="horario disponivel">11:00</button>
-            <button class="horario disponivel">14:00</button>
-            <button class="horario indisponivel" disabled>15:00</button>
-            <button class="horario disponivel">16:00</button>
-        </div>
-    </section>
+        <div class="agendamento-intro">
 
-    <a href="#" class="botao-cta botao-confirmar" id="botao-confirmar">Confirmar agendamento</a>
+            <span class="eyebrow">
+                AGENDAMENTO ELMONT
+            </span>
+
+            <h1 id="titulo-servico"></h1>
+
+            <p>
+                Escolha o melhor dia e horário para viver a experiência Elmont.
+            </p>
+
+        </div>
+
+
+        <!-- DIAS -->
+        <section class="dias">
+
+            <span class="etapa">
+                01 · ESCOLHA O DIA
+            </span>
+
+            <h2>Escolha o dia</h2>
+
+            <div class="lista-dias">
+
+                <button class="dia disponivel">
+                    <span class="dia-nome">Seg</span>
+                    <span class="dia-numero">25</span>
+                </button>
+
+                <button class="dia indisponivel" disabled>
+                    <span class="dia-nome">Ter</span>
+                    <span class="dia-numero">26</span>
+                </button>
+
+                <button class="dia disponivel">
+                    <span class="dia-nome">Qua</span>
+                    <span class="dia-numero">27</span>
+                </button>
+
+                <button class="dia disponivel">
+                    <span class="dia-nome">Qui</span>
+                    <span class="dia-numero">28</span>
+                </button>
+
+                <button class="dia disponivel">
+                    <span class="dia-nome">Sex</span>
+                    <span class="dia-numero">29</span>
+                </button>
+
+                <button class="dia indisponivel" disabled>
+                    <span class="dia-nome">Sáb</span>
+                    <span class="dia-numero">30</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- HORÁRIOS -->
+        <section class="horarios">
+
+            <span class="etapa">
+                02 · ESCOLHA O HORÁRIO
+            </span>
+
+            <h2>Horários disponíveis</h2>
+
+            <div class="lista-horarios">
+
+                <button class="horario disponivel">09:00</button>
+
+                <button class="horario indisponivel" disabled>
+                    10:00
+                </button>
+
+                <button class="horario disponivel">11:00</button>
+
+                <button class="horario disponivel">14:00</button>
+
+                <button class="horario indisponivel" disabled>
+                    15:00
+                </button>
+
+                <button class="horario disponivel">16:00</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONFIRMAR -->
+        <a
+            href="#"
+            class="botao-cta botao-confirmar"
+            id="botao-confirmar"
+        >
+            Confirmar agendamento
+        </a>
+
+    </div>
 
 </main>
     <div class="modal-overlay" id="modal-confirmacao">
@@ -73,7 +137,7 @@
         <div class="modal-icone">✓</div>
         <h2>Agendamento confirmado!</h2>
         <p id="modal-texto">Seu horário foi reservado com sucesso.</p>
-        <a href="index.html" class="botao-cta">Voltar para o início</a>
+        <a href="servicos.html" class="botao-cta">Voltar para o início</a>
     </div>
 </div>
     <script src="js/script.js"></script>

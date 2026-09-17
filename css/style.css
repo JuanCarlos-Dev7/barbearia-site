@@ -1988,3 +1988,229 @@ h1, h2, .logo, .logo-rodape {
     }
 
 }
+/* ========================================
+   PÁGINA DE AGENDAMENTO
+======================================== */
+
+.topo-servicos {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+
+    width: 100%;
+    padding: 28px 40px;
+    box-sizing: border-box;
+
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.topo-servicos .voltar {
+    justify-self: start;
+    color: #111;
+    text-decoration: none;
+    font-family: "EB Garamond", serif;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#titulo-servico {
+    margin: 0;
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+.nav-interna {
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-interna a {
+    color: #111;
+    text-decoration: none;
+    white-space: nowrap;
+}
+@media (max-width: 768px) {
+
+    .topo-servicos {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+
+        padding: 22px 20px;
+    }
+
+    .topo-servicos .voltar {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .nav-interna {
+        grid-column: 2;
+        grid-row: 1;
+
+        justify-self: end;
+        gap: 14px;
+
+        font-size: 14px;
+    }
+
+    #titulo-servico {
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        width: 100%;
+        text-align: left;
+
+        font-size: 27px;
+        white-space: normal;
+    }
+    body {
+    background: linear-gradient(180deg, #0b0b0b 0%, #111 100%);
+    color: #f5f1e8;
+}
+
+.topo-servicos {
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.topo-servicos .voltar,
+.nav-interna a {
+    color: #f5f1e8;
+    text-decoration: none;
+}
+
+#titulo-servico {
+    color: #f5f1e8;
+}
+
+.agendamento {
+    padding: 30px 20px 60px;
+}
+
+.agendamento-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #151515;
+    border: 1px solid rgba(201, 162, 39, 0.22);
+    border-radius: 24px;
+    padding: 28px 20px 36px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.agendamento-intro {
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.18);
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #c9a227;
+    margin-bottom: 10px;
+}
+
+.agendamento-intro h1 {
+    margin: 0 0 10px;
+    color: #f5f1e8;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.agendamento-intro p {
+    margin: 0;
+    color: rgba(245, 241, 232, 0.75);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.etapa {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #c9a227;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.dias,
+.horarios {
+    margin-top: 28px;
+}
+
+.dias h2,
+.horarios h2 {
+    color: #f5f1e8;
+    margin-bottom: 18px;
+}
+
+.lista-dias,
+.lista-horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.dia,
+.horario {
+    background: transparent;
+    color: #f5f1e8;
+    border: 1px solid #c9a227;
+    border-radius: 18px;
+    transition: 0.25s ease;
+}
+
+.dia {
+    width: 66px;
+    min-height: 84px;
+}
+
+.horario {
+    min-width: 92px;
+    padding: 14px 18px;
+    font-weight: 600;
+}
+
+.dia:hover,
+.horario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.22);
+    background: rgba(201, 162, 39, 0.08);
+}
+
+.indisponivel {
+    border-color: rgba(245, 241, 232, 0.18);
+    color: rgba(245, 241, 232, 0.35);
+    background: rgba(255,255,255,0.03);
+}
+
+.botao-confirmar {
+    display: block;
+    width: 100%;
+    margin-top: 34px;
+    text-align: center;
+    background: #c9a227;
+    color: #111;
+    border-radius: 999px;
+    padding: 18px 24px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 24px rgba(201, 162, 39, 0.22);
+}
+
+.botao-confirmar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(201, 162, 39, 0.28);
+}

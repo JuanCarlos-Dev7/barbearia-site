@@ -45,35 +45,7 @@ opcoesBloqueio.forEach(function (botao) {
         }
     });
 });
-// Seleciona todos os cards de serviço
-const cardsServico = document.querySelectorAll('.card-servico');
 
-cardsServico.forEach(function (card) {
-    card.addEventListener('click', function () {
-        // Pega os dados guardados no card clicado
-        const nome = card.dataset.nome;
-        const preco = card.dataset.preco;
-
-        // Salva esses dados na "gaveta" do navegador
-        localStorage.setItem('servicoEscolhido', nome);
-        localStorage.setItem('precoEscolhido', preco);
-
-        // Navega para a página de calendário
-        window.location.href = 'calendario.html';
-    });
-});
-// Verifica se existe um título de serviço na página atual
-const tituloServico = document.getElementById('titulo-servico');
-
-// Só executa se esse elemento existir na página (evita erro em outras páginas)
-if (tituloServico) {
-    const nome = localStorage.getItem('servicoEscolhido');
-    const preco = localStorage.getItem('precoEscolhido');
-
-    if (nome && preco) {
-        tituloServico.textContent = nome + ' · ' + preco;
-    }
-}
 // Seleciona todos os botões de remover bloqueio
 const botoesRemover = document.querySelectorAll('.remover-bloqueio');
 
@@ -300,4 +272,26 @@ if (menuToggle && menuDireita) {
 
     });
 
+}
+const cardsServico = document.querySelectorAll(".card-servico");
+
+cardsServico.forEach((card) => {
+    card.addEventListener("click", () => {
+        const nome = card.dataset.nome;
+        const preco = card.dataset.preco;
+
+        window.location.href =
+            `calendario.html?servico=${encodeURIComponent(nome)}&preco=${encodeURIComponent(preco)}`;
+    });
+});
+const parametros = new URLSearchParams(window.location.search);
+
+const servicoSelecionado = parametros.get("servico");
+const precoSelecionado = parametros.get("preco");
+
+const tituloServico = document.getElementById("titulo-servico");
+
+if (tituloServico && servicoSelecionado && precoSelecionado) {
+    tituloServico.textContent =
+        `${servicoSelecionado} · ${precoSelecionado}`;
 }
