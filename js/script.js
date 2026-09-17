@@ -1,17 +1,21 @@
 console.log('script.js carregado!');
 // Seleciona todos os botões de dia que estão disponíveis
-const botoesDia = document.querySelectorAll('.dia.disponivel');
+document.addEventListener("click", function (evento) {
 
-// Para cada botão de dia, escuta o evento de clique
-botoesDia.forEach(function (botao) {
-    botao.addEventListener('click', function () {
-        // Remove a classe "selecionado" de todos os dias
-        botoesDia.forEach(function (b) {
-            b.classList.remove('selecionado');
+    const botao = evento.target.closest(".dia.disponivel");
+
+    if (!botao) {
+        return;
+    }
+
+    document
+        .querySelectorAll(".dia.disponivel")
+        .forEach(function (dia) {
+            dia.classList.remove("selecionado");
         });
-        // Adiciona a classe "selecionado" só no botão clicado
-        botao.classList.add('selecionado');
-    });
+
+    botao.classList.add("selecionado");
+
 });
 // Mesma lógica, mas para os botões de horário
 const botoesHorario = document.querySelectorAll('.horario.disponivel');
@@ -294,4 +298,64 @@ const tituloServico = document.getElementById("titulo-servico");
 if (tituloServico && servicoSelecionado && precoSelecionado) {
     tituloServico.textContent =
         `${servicoSelecionado} · ${precoSelecionado}`;
+}
+// ===== DATAS AUTOMÁTICAS DO AGENDAMENTO =====
+
+const listaDias = document.getElementById("lista-dias");
+
+if (listaDias) {
+
+    const nomesDias = [
+        "Dom",
+        "Seg",
+        "Ter",
+        "Qua",
+        "Qui",
+        "Sex",
+        "Sáb"
+    ];
+
+    const hoje = new Date();
+
+    let diasAdicionados = 0;
+    let contador = 0;
+
+    // Quantos dias queremos mostrar
+    const quantidadeDias = 6;
+
+    while (diasAdicionados < quantidadeDias) {
+
+        const data = new Date(hoje);
+
+        data.setDate(hoje.getDate() + contador);
+
+        contador++;
+
+        // Domingo = 0
+        // Não mostra domingo porque a barbearia está fechada
+        if (data.getDay() === 0) {
+            continue;
+        }
+
+        const botao = document.createElement("button");
+
+        botao.classList.add("dia", "disponivel");
+
+        botao.dataset.data = data.toISOString().split("T")[0];
+
+        botao.innerHTML = `
+            <span class="dia-nome">
+                ${nomesDias[data.getDay()]}
+            </span>
+
+            <span class="dia-numero">
+                ${String(data.getDate()).padStart(2, "0")}
+            </span>
+        `;
+
+        listaDias.appendChild(botao);
+
+        diasAdicionados++;
+    }
+
 }
