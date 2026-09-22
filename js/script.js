@@ -1,6 +1,6 @@
 console.log('script.js carregado!');
 // Seleciona todos os botões de dia que estão disponíveis
-document.addEventListener("click", function (evento) {
+document.addEventListener("click", async function (evento) {
 
     const botao = evento.target.closest(".dia.disponivel");
 
@@ -16,17 +16,36 @@ document.addEventListener("click", function (evento) {
 
     botao.classList.add("selecionado");
 
+    const dataSelecionada = botao.dataset.data;
+
+    await carregarHorariosDisponiveis(dataSelecionada);
 });
 // Mesma lógica, mas para os botões de horário
-const botoesHorario = document.querySelectorAll('.horario.disponivel');
+// ========================================
+// SELEÇÃO DE HORÁRIO
+// ========================================
 
-botoesHorario.forEach(function (botao) {
-    botao.addEventListener('click', function () {
-        botoesHorario.forEach(function (b) {
-            b.classList.remove('selecionado');
-        });
-        botao.classList.add('selecionado');
+document.addEventListener("click", function (evento) {
+
+    const botao = evento.target.closest(".horario");
+
+    if (!botao) {
+        return;
+    }
+
+    // Se estiver ocupado
+    if (botao.classList.contains("indisponivel")) {
+        alert("Esse horário já está reservado. Escolha outro horário.");
+        return;
+    }
+
+    // Remove seleção anterior
+    document.querySelectorAll(".horario").forEach(function (horario) {
+        horario.classList.remove("selecionado");
     });
+
+    // Seleciona o novo horário
+    botao.classList.add("selecionado");
 });
 // Botões de tipo de bloqueio no painel
 const opcoesBloqueio = document.querySelectorAll('.opcao-bloqueio');
@@ -62,28 +81,176 @@ botoesRemover.forEach(function (botao) {
         item.remove();
     });
 });
-const botaoConfirmar = document.getElementById('botao-confirmar');
+// ========================================
+// AGENDAMENTO COM SUPABASE
+// ========================================
+
+const botaoConfirmar = document.getElementById("botao-confirmar");
+const modalCliente = document.getElementById("modal-cliente");
+const modalConfirmacao = document.getElementById("modal-confirmacao");
+const formCliente = document.getElementById("form-cliente");
+
+function buscarClienteSalvo() {
+    const clienteSalvo = localStorage.getItem("elmont_cliente");
+
+    if (!clienteSalvo) {
+        return null;
+    }
+
+    try {
+        return JSON.parse(clienteSalvo);
+    } catch {
+        return null;
+    }
+}
 
 if (botaoConfirmar) {
-    botaoConfirmar.addEventListener('click', function (evento) {
+    botaoConfirmar.addEventListener("click", async function (evento) {
         evento.preventDefault();
 
-        const diaEscolhido = document.querySelector('.dia.selecionado');
-        const horarioEscolhido = document.querySelector('.horario.selecionado');
+        const diaEscolhido = document.querySelector(".dia.selecionado");
+        const horarioEscolhido = document.querySelector(".horario.selecionado");
 
-        if (!diaEscolhido || !horarioEscolhido) {
-            alert('Escolha um dia e um horário antes de confirmar.');
+        if (!diaEscolhido) {
+    alert("Escolha um dia antes de confirmar.");
+    return;
+}
+
+        if (!horarioEscolhido) {
+    alert("Escolha um horário disponível antes de confirmar.");
+    return;
+}
+
+        const cliente = buscarClienteSalvo();
+
+        if (cliente) {
+            await salvarAgendamento(cliente);
             return;
         }
 
-        const modal = document.getElementById('modal-confirmacao');
-const modalTexto = document.getElementById('modal-texto');
-
-modalTexto.textContent = 'Agendamento para ' + diaEscolhido.querySelector('.dia-nome').textContent + ' ' + diaEscolhido.querySelector('.dia-numero').textContent + ' às ' + horarioEscolhido.textContent + '.';
-
-modal.classList.add('aberto');
+        modalCliente.classList.add("aberto");
     });
 }
+
+if (formCliente) {
+    formCliente.addEventListener("submit", async function (evento) {
+        evento.preventDefault();
+
+        const nome = document
+            .getElementById("cliente-nome")
+            .value
+            .trim();
+
+        const telefoneDigitado = document
+            .getElementById("cliente-telefone")
+            .value;
+
+        const telefone = telefoneDigitado.replace(/\D/g, "");
+
+        if (nome.length < 2) {
+            alert("Informe seu nome.");
+            return;
+        }
+
+        if (telefone.length < 10 || telefone.length > 13) {
+            alert("Informe um número de WhatsApp válido.");
+            return;
+        }
+
+        const cliente = {
+            nome: nome,
+            telefone: telefone
+        };
+
+        localStorage.setItem(
+            "elmont_cliente",
+            JSON.stringify(cliente)
+        );
+
+        modalCliente.classList.remove("aberto");
+
+        await salvarAgendamento(cliente);
+    });
+}
+
+async function salvarAgendamento(cliente) {
+    const diaEscolhido = document.querySelector(".dia.selecionado");
+    const horarioEscolhido = document.querySelector(".horario.selecionado");
+
+    if (!diaEscolhido || !horarioEscolhido) {
+        return;
+    }
+
+    const dataEscolhida = diaEscolhido.dataset.data;
+    const horario = horarioEscolhido.textContent.trim();
+
+    const parametrosAgendamento =
+        new URLSearchParams(window.location.search);
+
+    const nomeServico =
+        parametrosAgendamento.get("servico");
+
+    if (!nomeServico) {
+        alert("Não foi possível identificar o serviço escolhido.");
+        return;
+    }
+
+    // Procura o serviço no Supabase
+    const {
+        data: servico,
+        error: erroServico
+    } = await window.supabaseClient
+        .from("servicos")
+        .select("id")
+        .eq("nome", nomeServico)
+        .single();
+
+    if (erroServico || !servico) {
+        console.error(erroServico);
+
+        alert("Não foi possível localizar o serviço.");
+
+        return;
+    }
+
+    // Salva o agendamento
+    const {
+        error: erroAgendamento
+    } = await window.supabaseClient
+        .from("agendamentos")
+        .insert({
+            servico_id: servico.id,
+            nome_cliente: cliente.nome,
+            telefone: cliente.telefone,
+            data: dataEscolhida,
+            horario: horario
+        });
+
+    if (erroAgendamento) {
+        console.error(erroAgendamento);
+
+        if (erroAgendamento.code === "23505") {
+            alert(
+                "Esse horário acabou de ser reservado. Escolha outro horário."
+            );
+            return;
+        }
+
+        alert("Não foi possível realizar o agendamento.");
+        return;
+    }
+
+    // Se deu tudo certo
+    const modalTexto = document.getElementById("modal-texto");
+
+    if (modalTexto) {
+        modalTexto.textContent =
+            `${cliente.nome}, seu agendamento de ${nomeServico} para ${horario} foi confirmado.`;
+    }
+
+    modalConfirmacao.classList.add("aberto");
+}
+
 const formBloqueio = document.getElementById('form-bloqueio');
 
 if (formBloqueio) {
@@ -357,5 +524,77 @@ if (listaDias) {
 
         diasAdicionados++;
     }
+
+}
+async function carregarHorariosDisponiveis(dataSelecionada) {
+
+    const botoes =
+        document.querySelectorAll(".horario");
+
+    // Primeiro libera todos novamente
+    botoes.forEach(function (botao) {
+
+        botao.disabled = false;
+
+        botao.classList.remove(
+            "indisponivel",
+            "selecionado"
+        );
+
+        botao.classList.add("disponivel");
+    });
+
+
+    // Busca agendamentos já existentes
+    const {
+        data: agendamentos,
+        error
+    } = await window.supabaseClient
+        .from("agendamentos")
+        .select("horario")
+        .eq("data", dataSelecionada)
+        .eq("status", "confirmado");
+
+
+    if (error) {
+
+        console.error(
+            "Erro ao consultar horários:",
+            error
+        );
+
+        return;
+    }
+
+
+    agendamentos.forEach(function (agendamento) {
+
+        const horarioOcupado =
+            agendamento.horario.substring(0, 5);
+
+
+        botoes.forEach(function (botao) {
+
+            const horarioBotao =
+                botao.textContent.trim();
+
+
+            if (horarioBotao === horarioOcupado) {
+
+                botao.classList.remove(
+    "disponivel",
+    "selecionado"
+);
+
+                botao.classList.add("indisponivel");
+
+                botao.setAttribute("aria-disabled", "true");
+
+                botao.dataset.status = "OCUPADO";
+            }
+
+        });
+
+    });
 
 }

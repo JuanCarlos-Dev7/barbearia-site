@@ -1,113 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Escolher horário - Elmont Barbearia</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
+
 <body>
 
-<header class="topo-servicos">
+    <!-- ================= HEADER ================= -->
 
-    <a href="servicos.html" class="voltar">← Voltar</a>
+    <header class="topo-servicos">
 
-    <nav class="nav-interna">
-        <a href="servicos.html">Serviços</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="login.html">Painel</a>
-    </nav>
+        <a href="servicos.html" class="voltar">
+            ← Voltar
+        </a>
 
-</header>
+        <nav class="nav-interna">
+            <a href="servicos.html">Serviços</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="login.html">Painel</a>
+        </nav>
 
-<main class="agendamento">
-
-    <div class="agendamento-card">
-
-        <div class="agendamento-intro">
-
-            <span class="eyebrow">
-                AGENDAMENTO ELMONT
-            </span>
-
-            <h1 id="titulo-servico"></h1>
-
-            <p>
-                Escolha o melhor dia e horário para viver a experiência Elmont.
-            </p>
-
-        </div>
+    </header>
 
 
-        <!-- DIAS -->
-        <section class="dias">
+    <!-- ================= AGENDAMENTO ================= -->
 
-    <span class="etapa">
-        01 · ESCOLHA O DIA
-    </span>
+    <main class="agendamento">
 
-    <h2>Escolha o dia</h2>
+        <div class="agendamento-card">
 
-    <div class="lista-dias" id="lista-dias"></div>
+            <!-- INTRODUÇÃO -->
 
-</section>
+            <div class="agendamento-intro">
 
+                <span class="eyebrow">
+                    AGENDAMENTO ELMONT
+                </span>
 
-        <!-- HORÁRIOS -->
-        <section class="horarios">
+                <h1 id="titulo-servico"></h1>
 
-            <span class="etapa">
-                02 · ESCOLHA O HORÁRIO
-            </span>
-
-            <h2>Horários disponíveis</h2>
-
-            <div class="lista-horarios">
-
-                <button class="horario disponivel">09:00</button>
-
-                <button class="horario indisponivel" disabled>
-                    10:00
-                </button>
-
-                <button class="horario disponivel">11:00</button>
-
-                <button class="horario disponivel">14:00</button>
-
-                <button class="horario indisponivel" disabled>
-                    15:00
-                </button>
-
-                <button class="horario disponivel">16:00</button>
+                <p>
+                    Escolha o melhor dia e horário para viver a experiência Elmont.
+                </p>
 
             </div>
 
-        </section>
+
+            <!-- ================= DIAS ================= -->
+
+            <section class="dias">
+
+                <span class="etapa">
+                    01 · ESCOLHA O DIA
+                </span>
+
+                <h2>Escolha o dia</h2>
+
+                <div
+                    class="lista-dias"
+                    id="lista-dias"
+                ></div>
+
+            </section>
 
 
-        <!-- CONFIRMAR -->
-        <a
-            href="#"
-            class="botao-cta botao-confirmar"
-            id="botao-confirmar"
-        >
-            Confirmar agendamento
-        </a>
+            <!-- ================= HORÁRIOS ================= -->
 
-    </div>
+            <section class="horarios">
 
-</main>
-    <div class="modal-overlay" id="modal-confirmacao">
-    <div class="modal-caixa">
-        <div class="modal-icone">✓</div>
-        <h2>Agendamento confirmado!</h2>
-        <p id="modal-texto">Seu horário foi reservado com sucesso.</p>
-        <a href="servicos.html" class="botao-cta">Voltar para o início</a>
-    </div>
+                <span class="etapa">
+                    02 · ESCOLHA O HORÁRIO
+                </span>
+
+                <h2>Horários disponíveis</h2>
+
+                <div class="lista-horarios">
+
+    <button class="horario disponivel">09:00</button>
+    <button class="horario disponivel">10:00</button>
+    <button class="horario disponivel">11:00</button>
+    <button class="horario disponivel">14:00</button>
+    <button class="horario disponivel">15:00</button>
+    <button class="horario disponivel">16:00</button>
+
 </div>
+
+            </section>
+
+
+            <!-- ================= CONFIRMAR ================= -->
+
+            <a
+                href="#"
+                class="botao-cta botao-confirmar"
+                id="botao-confirmar"
+            >
+                Confirmar agendamento
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==================================================
+         MODAL - PRIMEIRO AGENDAMENTO
+    =================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="modal-cliente"
+    >
+
+        <div class="modal-caixa">
+
+            <span class="eyebrow">
+                QUASE LÁ
+            </span>
+
+            <h2>Seus dados</h2>
+
+            <p>
+                Precisamos dessas informações apenas para identificar seu agendamento.
+            </p>
+
+
+            <form id="form-cliente">
+
+                <div class="campo-cliente">
+
+                    <label for="cliente-nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cliente-nome"
+                        placeholder="Seu nome"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo-cliente">
+
+                    <label for="cliente-telefone">
+                        WhatsApp
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="cliente-telefone"
+                        placeholder="(62) 99999-9999"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="botao-cta botao-confirmar"
+                >
+                    Confirmar agendamento
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         MODAL - AGENDAMENTO CONFIRMADO
+    =================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="modal-confirmacao"
+    >
+
+        <div class="modal-caixa">
+
+            <div class="modal-icone">
+                ✓
+            </div>
+
+            <h2>
+                Agendamento confirmado!
+            </h2>
+
+            <p id="modal-texto">
+                Seu horário foi reservado com sucesso.
+            </p>
+
+            <a
+                href="index.html"
+                class="botao-cta"
+            >
+                Voltar para o início
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
     <script src="js/script.js"></script>
+
 </body>
+
 </html>

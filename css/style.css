@@ -2214,3 +2214,58 @@ h1, h2, .logo, .logo-rodape {
     transform: translateY(-2px);
     box-shadow: 0 16px 28px rgba(201, 162, 39, 0.28);
 }
+/* ========================================
+   HORÁRIOS OCUPADOS
+======================================== */
+
+.horario.indisponivel {
+    background: #252525 !important;
+    border: 1px solid #4a4a4a !important;
+    color: #777 !important;
+
+    cursor: not-allowed;
+
+    min-height: 58px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    box-shadow: none !important;
+}
+
+.horario.indisponivel::after {
+    content: attr(data-status);
+
+    display: block;
+
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    color: #8a8a8a;
+}
+
+.horario.indisponivel:hover {
+    background: #252525 !important;
+    transform: none !important;
+}
+
+
+/* Horário disponível */
+
+.horario.disponivel {
+    border-color: #d4aa1f;
+}
+
+
+/* Horário escolhido */
+
+.horario.selecionado {
+    background: #d4aa1f !important;
+    color: #111 !important;
+    border-color: #d4aa1f !important;
+}
