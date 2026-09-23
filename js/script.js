@@ -598,3 +598,12 @@ async function carregarHorariosDisponiveis(dataSelecionada) {
     });
 
 }
+// ===== VOLTAR DO PAINEL =====
+
+const botaoVoltarPainel = document.getElementById("voltar-painel");
+
+if (botaoVoltarPainel) {
+    botaoVoltarPainel.addEventListener("click", function () {
+        window.history.back();
+    });
+}

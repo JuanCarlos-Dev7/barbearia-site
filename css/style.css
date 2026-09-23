@@ -2269,3 +2269,79 @@ h1, h2, .logo, .logo-rodape {
     color: #111 !important;
     border-color: #d4aa1f !important;
 }
+/* ========================================
+   TOPO DO PAINEL
+======================================== */
+
+.topo-painel {
+    width: 100%;
+    padding: 22px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    background: #0b0b0b;
+    border-bottom: 1px solid rgba(212, 170, 31, 0.25);
+}
+
+.voltar-painel {
+    background: transparent;
+    border: none;
+
+    color: #f5f1e8;
+
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.titulo-painel-topo {
+    color: #d4aa1f;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+/* ===== BOTÃO VOLTAR DO PAINEL ===== */
+
+.voltar-painel {
+    display: inline-block;
+
+    margin: 20px 0 10px 20px;
+
+    color: #f5f1e8;
+    text-decoration: none;
+
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    position: relative;
+    z-index: 9999;
+}
+
+.voltar-painel:hover {
+    color: #d4aa1f;
+}
+.voltar-login {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+
+    color: #f5f1e8;
+    text-decoration: none;
+
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    z-index: 10;
+}
+
+.voltar-login:hover {
+    color: #c9a227;
+}
