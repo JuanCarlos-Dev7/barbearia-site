@@ -1,78 +1,348 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Barbeiro - Elmont Barbearia</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Painel Elmont</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/painel.css">
+
 </head>
-<body>
 
-    <header class="topo-servicos">
-    <a href="index.html" class="voltar">← Voltar</a>
-    <h1>Painel do Barbeiro</h1>
-    <nav class="nav-interna">
-        <a href="servicos.html">Serviços</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="login.html">Painel</a>
-    </nav>
-</header>
 
-<main class="painel">
+<body class="body-painel">
 
-    <section class="bloquear-agenda">
-        <h2>Bloquear agenda</h2>
-        <p class="instrucao">Escolha o que fechar:</p>
+<div class="painel-app">
 
-        <div class="opcoes-bloqueio">
-            <button class="opcao-bloqueio ativo">Um horário</button>
-            <button class="opcao-bloqueio">Um dia</button>
-            <button class="opcao-bloqueio">Uma semana</button>
-            <button class="opcao-bloqueio">Um mês</button>
+
+    <!-- =========================
+         MENU LATERAL
+    ========================== -->
+
+    <aside class="painel-sidebar">
+
+        <div class="painel-marca">
+
+            <span>ELMONT</span>
+
+            <small>
+                Painel administrativo
+            </small>
+
         </div>
 
-        <form class="form-bloqueio" id="form-bloqueio">
-            <div class="campo-form">
-                <label for="data-bloqueio">Data</label>
-                <input type="date" id="data-bloqueio" name="data-bloqueio">
+
+        <nav class="painel-menu">
+
+            <button
+                class="painel-menu-item ativo"
+                data-secao="visao-geral"
+            >
+                Visão geral
+            </button>
+
+            <button
+                class="painel-menu-item"
+                data-secao="agenda"
+            >
+                Agenda
+            </button>
+
+            <button
+                class="painel-menu-item"
+                data-secao="clientes"
+            >
+                Clientes
+            </button>
+
+            <button
+                class="painel-menu-item"
+                data-secao="financeiro"
+            >
+                Financeiro
+            </button>
+
+            <button
+                class="painel-menu-item"
+                data-secao="bloqueios"
+            >
+                Bloqueios
+            </button>
+
+            <button
+                class="painel-menu-item"
+                data-secao="servicos"
+            >
+                Serviços
+            </button>
+
+        </nav>
+
+
+        <a
+            href="index.html"
+            class="painel-sair"
+        >
+            ← Voltar ao site
+        </a>
+
+    </aside>
+
+
+    <!-- =========================
+         CONTEÚDO
+    ========================== -->
+
+    <main class="painel-conteudo">
+
+
+        <!-- CABEÇALHO -->
+
+        <header class="painel-header">
+
+            <div>
+
+                <span class="painel-eyebrow">
+                    PAINEL ELMONT
+                </span>
+
+                <h1>
+                    Visão geral
+                </h1>
+
             </div>
 
-            <div class="campo-form" id="campo-horario">
-                 <label for="horario-bloqueio">Horário</label>
-                 <input type="time" id="horario-bloqueio" name="horario-bloqueio">
+
+            <select id="filtro-periodo">
+
+                <option value="hoje">
+                    Hoje
+                </option>
+
+                <option value="semana" selected>
+                    Esta semana
+                </option>
+
+                <option value="mes">
+                    Este mês
+                </option>
+
+                <option value="ano">
+                    Este ano
+                </option>
+
+            </select>
+
+        </header>
+
+
+        <!-- =========================
+             INDICADORES
+        ========================== -->
+
+        <section class="dashboard-cards">
+
+            <article class="dashboard-card">
+
+                <span>
+                    Faturamento
+                </span>
+
+                <strong id="valor-faturamento">
+                    R$ 0,00
+                </strong>
+
+                <small id="comparacao-faturamento">
+                    —
+                </small>
+
+            </article>
+
+
+            <article class="dashboard-card">
+
+                <span>
+                    Atendimentos
+                </span>
+
+                <strong id="total-atendimentos">
+                    0
+                </strong>
+
+                <small>
+                    no período
+                </small>
+
+            </article>
+
+
+            <article class="dashboard-card">
+
+                <span>
+                    Ticket médio
+                </span>
+
+                <strong id="ticket-medio">
+                    R$ 0,00
+                </strong>
+
+                <small>
+                    por atendimento
+                </small>
+
+            </article>
+
+
+            <article class="dashboard-card">
+
+                <span>
+                    Clientes
+                </span>
+
+                <strong id="total-clientes">
+                    0
+                </strong>
+
+                <small>
+                    clientes atendidos
+                </small>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             GRÁFICO
+        ========================== -->
+
+        <section class="painel-bloco painel-grafico">
+
+            <div class="painel-bloco-header">
+
+                <div>
+
+                    <span>
+                        DESEMPENHO
+                    </span>
+
+                    <h2>
+                        Faturamento
+                    </h2>
+
+                </div>
+
             </div>
 
-            <div class="campo-form">
-                <label for="motivo">Motivo (opcional)</label>
-                <input type="text" id="motivo" name="motivo" placeholder="Ex: almoço, consulta, viagem...">
+            <div class="grafico-container">
+
+                <canvas id="grafico-faturamento"></canvas>
+
             </div>
 
-            <button type="submit" class="botao-cta botao-bloquear">Confirmar bloqueio</button>
-        </form>
-    </section>
+        </section>
 
-    <section class="bloqueios-ativos" id="bloqueios-ativos">
-        <h2>Bloqueios ativos</h2>
 
-        <div class="item-bloqueio">
-            <p>27/08 · 15:00-16:00 · <span class="motivo-bloqueio">"consulta médica"</span></p>
-            <button class="remover-bloqueio">✕ Remover</button>
+        <!-- =========================
+             PARTE INFERIOR
+        ========================== -->
+
+        <div class="painel-grid-secundario">
+
+
+            <section class="painel-bloco">
+
+                <div class="painel-bloco-header">
+
+                    <div>
+
+                        <span>
+                            SERVIÇOS
+                        </span>
+
+                        <h2>
+                            Mais realizados
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="ranking-servicos">
+
+                    <p class="painel-vazio">
+                        Ainda não há dados suficientes.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <section class="painel-bloco">
+
+                <div class="painel-bloco-header">
+
+                    <div>
+
+                        <span>
+                            HOJE
+                        </span>
+
+                        <h2>
+                            Próximos clientes
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="agenda-hoje">
+
+                    <p class="painel-vazio">
+                        Nenhum atendimento carregado.
+                    </p>
+
+                </div>
+
+            </section>
+
         </div>
 
-        <div class="item-bloqueio">
-            <p>02/09 a 08/09 · semana inteira · <span class="motivo-bloqueio">"férias"</span></p>
-            <button class="remover-bloqueio">✕ Remover</button>
-        </div>
 
-        <p class="nota-painel">Esses horários somem automaticamente da tela do cliente.</p>
-    </section>
+    </main>
 
-</main>
+</div>
 
-<script src="js/script.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+
+<!-- Painel -->
+<script src="js/painel.js"></script>
 
 </body>
+
 </html>

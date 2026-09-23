@@ -11,26 +11,56 @@
 </head>
 <body>
 
+    <a href="index.html" class="voltar-login">
+        ← Voltar
+    </a>
+
     <main class="tela-login">
-    <form class="card-login" id="form-login">
-        <h1>Área do Barbeiro</h1>
-        <p class="subtitulo-login">Entre para gerenciar sua agenda</p>
 
-        <label for="usuario">Usuário ou e-mail</label>
-        <input type="text" id="usuario" name="usuario" placeholder="seu@email.com">
+        <form class="card-login" id="form-login">
 
-        <label for="senha">Senha</label>
-<input type="password" id="senha" name="senha" placeholder="••••••••">
+            <h1>Área do Barbeiro</h1>
 
-<p class="erro-login" id="erro-login"></p>
+            <p class="subtitulo-login">
+                Entre para gerenciar sua agenda
+            </p>
 
-<button type="submit" class="botao-cta botao-login">Entrar</button>
-    </form>
-</main>
+            <label for="usuario">
+                Usuário ou e-mail
+            </label>
+
+            <input
+                type="text"
+                id="usuario"
+                name="usuario"
+                placeholder="seu@email.com"
+            >
+
+            <label for="senha">
+                Senha
+            </label>
+
+            <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="••••••••"
+            >
+
+            <p class="erro-login" id="erro-login"></p>
+
+            <button
+                type="submit"
+                class="botao-cta botao-login"
+            >
+                Entrar
+            </button>
+
+        </form>
+
+    </main>
 
     <script src="js/script.js"></script>
+
 </body>
-<a href="index.html" class="voltar-login">
-    ← Voltar
-</a>
 </html>
